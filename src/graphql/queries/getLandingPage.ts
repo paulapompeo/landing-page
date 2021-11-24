@@ -32,13 +32,27 @@ const GET_LANDING_PAGE = /* GraphQl */ `
     }
   }
 
+  fragment sectionTech on LandingPage {
+    sectionTech {
+      title
+      techIcons {
+        icon {
+          url
+        }
+        title
+      }
+    }
+  }
+
   query GET_LANDING_PAGE {
     landingPage {
       ...logo
       ...header
       ...sectionAboutProject
+      ...sectionTech
     }
   }
+
 `
 
 export default GET_LANDING_PAGE
